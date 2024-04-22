@@ -1,51 +1,81 @@
-package DataTypes;
-
-import java.util.Arrays;
-
 public class Stack {
-    private int[] array = new int[128];
-    private int topIndex;
 
-    public Stack() {
-        Arrays.fill(array, -1);
-        topIndex = -1;
+    private class Node {
+        public int data;
+        public Node nextNode;
+
+        Node(int inData) {
+            data = inData;
+            nextNode = null;
+        }
     }
 
-    public void print() {
-        if (topIndex < 0) {
-            System.out.println("Stack is empty.");
-            return;
+    private Node topNode;
+    private int size = 0;
+
+    public Stack (int inData) {
+        Node newNode = new Node(inData);
+        topNode = newNode;
+
+        size++;
+    }
+
+    public void print(){
+        String output = "";
+
+        Node tempNode = topNode;
+        while (tempNode != null) {
+            output += tempNode.data + " ";
+            tempNode = tempNode.nextNode;
         }
 
-        for (int x = topIndex; x >= 0; --x) {
-            System.out.print(x + " ");
+        System.out.println(output);
+    }
+
+    // Adds a new item to the end of the stack.
+    public void push(int inData){
+        Node newNode = new Node(inData);
+
+        if (size == 0) {
+            topNode = newNode;
+        } else {
+            newNode.nextNode = topNode;
+            topNode = newNode;
         }
 
-        System.out.println();
+        size++;
     }
 
-    public void push(int inData) {
-        if (topIndex >= Integer.MAX_VALUE) {
-            System.out.println("Stack overflow. Attempting to push value past the max value.");
-            return;
-        }
+    // Removes the last item of the stack, then returns the value that was deleted.
+    public Node pop(){
+        if (size == 0){
+            return null;
+        } 
 
-        topIndex += 1;
-        array[topIndex] = inData;
-    }
+        Node tempNode = topNode;
+        topNode = topNode.nextNode;
+        tempNode.nextNode = null;
 
-    public void pop() {
-        if (topIndex < 0) {
-            return;
-        }
-
-        array[topIndex] = -1;
-        topIndex -= 1;
-    }
-
-    public int peek() {
-        return array[topIndex];
+        size--;
+        return tempNode;
     }
 
 
+    // -------------------------------------------------
+    // MAIN METHOD
+    // -------------------------------------------------
+    public static void main(String[] args) {
+
+        System.out.println("Stack.");
+
+        Stack stack = new Stack(1);
+        stack.push(2);
+        stack.push(3);
+
+        stack.print();
+
+        System.out.println("Pop: " + stack.pop().data);
+        stack.print();
+    }
 }
+
