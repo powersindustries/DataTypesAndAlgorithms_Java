@@ -1,9 +1,10 @@
 ### Data Types and Algorithms
 
 
-### Single Linked Lists
-- Container of data where each piece of data is connects to the next in a sequential line.
-- Each node of data has a pointer to the next node in the line.
+### Linked Lists
+- Data container where each piece of data is connects to the next in a sequential line.
+- Singly linked lists have a pointer to the next node in the line.
+- Doubly linked lists have a pointer to the next and previous node in the line.
 - Unlike arrays, data is not saved contiguously in memory.
 - Big O Information
     - O(n) -> Adding to the end of the list, inserting nodes, and removing nodes from the list.
