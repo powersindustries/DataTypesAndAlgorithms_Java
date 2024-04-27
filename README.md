@@ -23,3 +23,15 @@
 - Real life example -> Being in line at the DMV.
 - Big O Information:
     - O(1) -> Enqueue and Dequeue.
+
+
+### Binary Search Tree
+- Similar to a Linked List except that it branches in multiple directions.
+- Binary Search Tree nodes branch left and right.
+- Nodes on the left are less than nodes on the right.
+- Tree Definitions
+    - `Full Tree` -> Each node points to 0 or 2 nodes.
+    - `Perfect Tree` -> Each node has both left and right nodes filled with data.
+    - `Complete Tree` -> The furthest reaching row in the tree is filled from left to right.
+- Big O Information:
+    - O(logN) -> Uses Divide and Conquer to achieve this. Most nodes get completely ignored.
