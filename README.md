@@ -48,3 +48,20 @@
     - Hash Method -> O(1)
     - Set Method -> O(1)
     - Get Method -> O(1)
+
+
+### Graphs
+- Anatomy of a graph:
+    - `Vertex` -> Circle on diagram that contains piece of data.
+        - There can be no limit to number of edges that branch off a Vertex.
+    - `Edge` -> Line on the diagram that connects two Vertices.
+        - Edges can be weighted. This adds a value to an edge between two vertices.
+        - Edges can be directional. We assume most edges are 2 directional, but sometimes its only one.
+- Common Types of graphs:
+    - `Adjacency Matrix` -> Graph where the data is outlined in a 2x2 matrix.
+        - The rows represent the vertex and the columns represent what has edges connecting to the vertices.
+        - Great for displaying weights of edges. Not very efficient.
+    - `Ajacency List` -> Represent the graph using a hash map where the key is the vertex and the value is an array of vertices.
+        - The keys in the hashmap represent the vertices.
+        - The values at each key are the edges.
+        - Much more efficiant than an Adjacency Matrix (O(1) in most cases).
