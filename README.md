@@ -27,7 +27,7 @@
 
 ### Binary Search Tree
 - BSTs are similar to a Linked List except that it branches in multiple directions.
-- BST nodes branch left and right.
+- BST have two branching nodes that go left and right.
 - Nodes on the left are less than nodes on the right.
 - Tree Definitions
     - `Full Tree` -> Each node points to 0 or 2 nodes.
@@ -41,9 +41,11 @@
 - Hash Tables are a data container where each piece of data is searchable through a {Key, Value} pair.
 - How It works:
     - Array with a prime number amount of entries.
-    - When adding a new entry, we take the key and hash it. This Hash value becomes the index in the array.
+    - When adding a new entry, we take the key and hash it. This Hash value becomes the index within the array.
         - `Hash Method` -> Takes a string and turns it into a number. Calculation is 1 way, you can turn the key to a hash but the hashed index cant turn back into the original key.
     - Each entry in the array is a linked list. When we have multiple entries with say key, the duplicate key values get added to the end of the linked list.
+- Collisions -> When multiple values have the same key.
+    - This usecase is handled by having each value in the array be a linked list.
 - Big O Information:
     - Hash Method -> O(1)
     - Set Method -> O(1)
@@ -57,7 +59,7 @@
     - `Edge` -> Line on the diagram that connects two Vertices.
         - Edges can be weighted. This adds a value to an edge between two vertices.
         - Edges can be directional. We assume most edges are 2 directional, but sometimes its only one.
-- Common Types of graphs:
+- Common Types of Graph Representations:
     - `Adjacency Matrix` -> Graph where the data is outlined in a 2x2 matrix.
         - The rows represent the vertex and the columns represent what has edges connecting to the vertices.
         - Great for displaying weights of edges. Not very efficient.
@@ -65,3 +67,29 @@
         - The keys in the hashmap represent the vertices.
         - The values at each key are the edges.
         - Much more efficiant than an Adjacency Matrix (O(1) in most cases).
+
+
+### Heap
+- A heap is a tree data structure where each node is greater than its decendants or less than its decendants.
+    - `Max Heap` -> Each node is greater than its decendants.
+    - `Min Heap` -> Each node is less than its decendants.
+```
+Max Heap:
+     10
+   /    \
+  9      8
+ / \    / \
+5   6  3   1
+
+Min Heap:
+     1
+   /   \
+  3     6
+ / \   / \
+5   9 8  10
+```
+- Implemented using an array. Each operation shifts around the values in the array.
+- Typically used as a Priority Queue (Heap and Priority Queue used interchangeably).
+- Big O Information:
+    - Remove -> O(logN)
+    - Insert -> O(logN)
