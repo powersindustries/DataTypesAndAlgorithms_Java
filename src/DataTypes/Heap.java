@@ -1,3 +1,5 @@
+package DataTypes;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -102,7 +104,7 @@ public class Heap {
     // -------------------------------------------------
     public static void main(String[] args) {
 
-        System.out.println("Heap.");
+        System.out.println("DataTypes.Heap.");
 
         Heap heap = new Heap();
 

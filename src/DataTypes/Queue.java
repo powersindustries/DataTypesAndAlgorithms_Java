@@ -1,3 +1,5 @@
+package DataTypes;
+
 public class Queue {
 
     private class Node {
@@ -75,7 +77,7 @@ public class Queue {
     // -------------------------------------------------
     public static void main(String[] args) {
 
-        System.out.println("Queue.");
+        System.out.println("DataTypes.Queue.");
 
         Queue queue = new Queue(1);
         queue.enqueue(2);

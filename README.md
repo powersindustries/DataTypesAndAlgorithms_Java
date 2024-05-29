@@ -1,7 +1,6 @@
-### Data Types and Algorithms
+# Data Types
 
-
-### Linked Lists
+## Linked Lists
 - Data container where each piece of data is connects to the next in a sequential line.
 - Singly linked lists have a pointer to the next node in the line.
 - Doubly linked lists have a pointer to the next and previous node in the line.
@@ -11,21 +10,21 @@
     - O(1) -> Adding nodes to the beginning of the list.
 
 
-### Stacks
+## Stacks
 - LIFO -> Last in, first out.
 - Real life example -> Tennis Ball canister.
 - Big O Information
     - O(1) -> Push and Pop.
 
 
-### Queue
+## DataTypes.Queue
 - FIFO -> First in, first out.
 - Real life example -> Being in line at the DMV.
 - Big O Information:
     - O(1) -> Enqueue and Dequeue.
 
 
-### Binary Search Tree
+## Binary Search Tree
 - BSTs are similar to a Linked List except that it branches in multiple directions.
 - BST have two branching nodes that go left and right.
 - Nodes on the left are less than nodes on the right.
@@ -37,7 +36,7 @@
     - O(logN) -> Uses Divide and Conquer to achieve this. Most nodes get completely ignored.
 
 
-### Hash Tables
+## Hash Tables
 - Hash Tables are a data container where each piece of data is searchable through a {Key, Value} pair.
 - How It works:
     - Array with a prime number amount of entries.
@@ -52,15 +51,15 @@
     - Get Method -> O(1)
 
 
-### Graphs
+## Graphs
 - Anatomy of a graph:
     - `Vertex` -> Circle on diagram that contains piece of data.
         - There can be no limit to number of edges that branch off a Vertex.
     - `Edge` -> Line on the diagram that connects two Vertices.
         - Edges can be weighted. This adds a value to an edge between two vertices.
         - Edges can be directional. We assume most edges are 2 directional, but sometimes its only one.
-- Common Types of Graph Representations:
-    - `Adjacency Matrix` -> Graph where the data is outlined in a 2x2 matrix.
+- Common Types of DataTypes.Graph Representations:
+    - `Adjacency Matrix` -> DataTypes.Graph where the data is outlined in a 2x2 matrix.
         - The rows represent the vertex and the columns represent what has edges connecting to the vertices.
         - Great for displaying weights of edges. Not very efficient.
     - `Ajacency List` -> Represent the graph using a hash map where the key is the vertex and the value is an array of vertices.
@@ -69,19 +68,19 @@
         - Much more efficiant than an Adjacency Matrix (O(1) in most cases).
 
 
-### Heap
+## Heap
 - A heap is a tree data structure where each node is greater than its decendants or less than its decendants.
-    - `Max Heap` -> Each node is greater than its decendants.
-    - `Min Heap` -> Each node is less than its decendants.
+    - `Max DataTypes.Heap` -> Each node is greater than its decendants.
+    - `Min DataTypes.Heap` -> Each node is less than its decendants.
 ```
-Max Heap:
+Max DataTypes.Heap:
      10
    /    \
   9      8
  / \    / \
 5   6  3   1
 
-Min Heap:
+Min DataTypes.Heap:
      1
    /   \
   3     6
@@ -89,7 +88,41 @@ Min Heap:
 5   9 8  10
 ```
 - Implemented using an array. Each operation shifts around the values in the array.
-- Typically used as a Priority Queue (Heap and Priority Queue used interchangeably).
+- Typically used as a Priority DataTypes.Queue (DataTypes.Heap and Priority DataTypes.Queue used interchangeably).
 - Big O Information:
     - Remove -> O(logN)
     - Insert -> O(logN)
+
+
+
+# Algorithms
+
+## Basic Sorts
+Educational sorting algorithms that are all "In-Place".
+
+### Bubble Sort
+- Start at the end. Compare two items next to one another. If they one on left is greater than right, swap the two.
+- Continue this process until no swaps happen.
+- The smallest value "Bubbles Up."
+- When to Use:
+    - Mostly used for educational purposes.
+    - Not very efficient: O(n^2)
+
+### Selection Sort
+- Index based sort.
+- Start at index 0 and search for the index with the smallest value.
+- When the min index has been found, swap it with the comparitive index.
+- Go down the line and repeat this process until the data has been sorted.
+- When to Use:
+    - Mostly used for educational purposes.
+    - Not very efficient: O(n^2)
+
+
+### Insertion Sort
+- Start with second item in list.
+- Compare it to the item on the left. If its less the two swap.
+- Continue to move left until reaching the first item in the array.
+- When to Use:
+    - Mostly used for educational purposes. Best of the "educational" sorts.
+    - Good for small and nearly sorted datasets.
+    - Not very efficient: O(n^2)

@@ -1,3 +1,5 @@
+package DataTypes;
+
 public class SLList<T> {
 
     public class Node {

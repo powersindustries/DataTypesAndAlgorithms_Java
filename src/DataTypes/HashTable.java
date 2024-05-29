@@ -1,3 +1,5 @@
+package DataTypes;
+
 import java.util.ArrayList;
 
 public class HashTable {
@@ -51,7 +53,7 @@ public class HashTable {
         return output;
     }
 
-    // Adds a new data entry to the HashTable.
+    // Adds a new data entry to the DataTypes.HashTable.
     public void set(String inKey, int inValue) {
         int index = hashMethod(inKey);
 

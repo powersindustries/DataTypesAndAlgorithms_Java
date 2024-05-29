@@ -1,3 +1,5 @@
+package DataTypes;
+
 public class Stack {
 
     private class Node {
@@ -66,7 +68,7 @@ public class Stack {
     // -------------------------------------------------
     public static void main(String[] args) {
 
-        System.out.println("Stack.");
+        System.out.println("DataTypes.Stack.");
 
         Stack stack = new Stack(1);
         stack.push(2);

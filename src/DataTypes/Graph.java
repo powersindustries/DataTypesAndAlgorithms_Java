@@ -1,3 +1,5 @@
+package DataTypes;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -78,7 +80,7 @@ public class Graph {
     // -------------------------------------------------
     public static void main(String[] args) {
 
-        System.out.println("Graph - Adjacency List.");
+        System.out.println("DataTypes.Graph - Adjacency List.");
 
         Graph graph = new Graph();
 
