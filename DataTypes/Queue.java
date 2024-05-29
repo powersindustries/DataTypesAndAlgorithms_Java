@@ -22,7 +22,7 @@ public class Queue {
         size++;
     }
 
-    public void print(){
+    public void print() {
         String output = "";
 
         Node tempNode = firstNode;
@@ -35,7 +35,7 @@ public class Queue {
     }
 
     // Adds a new item to the beginning of the queue.
-    public void enqueue(int inData){
+    public void enqueue(int inData) {
         Node newNode = new Node(inData);
 
         if (size == 0) {
@@ -50,10 +50,10 @@ public class Queue {
     }
 
     // Removes the first item in the queue, then returns the value that was deleted.
-    public Node dequeue(){
+    public Node dequeue() {
         if (size == 0) {
             return null;
-        } 
+        }
 
         Node tempNode = firstNode;
         if (size == 1) {

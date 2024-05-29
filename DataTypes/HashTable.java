@@ -25,9 +25,9 @@ public class HashTable {
     public void print() {
         String output = "";
 
-        for (int x=0; x < map.length; ++x) {
+        for (int x = 0; x < map.length; ++x) {
             Node tempNode = map[x];
-            while(tempNode != null) {
+            while (tempNode != null) {
                 output += "{" + tempNode.key + ", " + tempNode.value + "}";
                 tempNode = tempNode.nextNode;
             }
@@ -41,11 +41,11 @@ public class HashTable {
         int output = 0;
 
         char[] keyChar = inKey.toCharArray();
-        for(int x=0; x < keyChar.length; ++x) {
+        for (int x = 0; x < keyChar.length; ++x) {
             int asciiValue = keyChar[x];
 
             // Using Feel free to use any prime number here.
-            output = (output + asciiValue * 19) % map.length; 
+            output = (output + asciiValue * 19) % map.length;
         }
 
         return output;
@@ -57,7 +57,7 @@ public class HashTable {
 
         Node newNode = new Node(inKey, inValue);
         // Case for when index is empty. Set empty index to newNode.
-        if (map[index] == null){
+        if (map[index] == null) {
             map[index] = newNode;
         }
         // Case for when index already has a node. Add the newNode to the nextNode of the node at index.
@@ -76,7 +76,7 @@ public class HashTable {
     public int get(String inKey) {
         int index = hashMethod(inKey);
         Node tempNode = map[index];
-        while(tempNode != null) {
+        while (tempNode != null) {
             if (tempNode.key == inKey) {
                 return tempNode.value;
             }
@@ -91,9 +91,9 @@ public class HashTable {
     public ArrayList keys() {
         ArrayList<String> outputKeys = new ArrayList<String>();
 
-        for(int x=0; x< map.length; ++x) {
+        for (int x = 0; x < map.length; ++x) {
             Node tempNode = map[x];
-            while(tempNode != null) {
+            while (tempNode != null) {
                 outputKeys.add(tempNode.key);
                 tempNode = tempNode.nextNode;
             }
@@ -117,7 +117,7 @@ public class HashTable {
         hashTable.set("test3", 10);
 
         hashTable.print();
-    
+
         System.out.println(hashTable.keys());
 
     }

@@ -55,7 +55,7 @@ public class Graph {
     public boolean removeVertext(String vertex) {
 
         ArrayList<String> vertextArray = map.get(vertex);
-      
+
         // Safety check.
         if (vertextArray == null) {
             return false;
@@ -63,7 +63,7 @@ public class Graph {
 
         // Iterate through the other vertex and remove reference to the input parameter vertex.
         for (String nextVertex : map.get(vertex)) {
-            map.get(nextVertex).remove(vertex); 
+            map.get(nextVertex).remove(vertex);
         }
 
         // Final removal of the input parameter vertex.
@@ -71,7 +71,6 @@ public class Graph {
 
         return true;
     }
-
 
 
     // -------------------------------------------------

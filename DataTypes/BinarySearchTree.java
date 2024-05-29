@@ -1,4 +1,9 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
+
     private class Node {
         public int data;
         public Node left;
@@ -9,6 +14,7 @@ public class BinarySearchTree {
             left = null;
             right = null;
         }
+
     }
 
     private Node rootNode;
@@ -27,7 +33,7 @@ public class BinarySearchTree {
         while (tempNode != null) {
             if (tempNode.data == newNode.data) {
                 return false;
-            } 
+            }
 
             // Left case.
             if (newNode.data < tempNode.data) {
@@ -37,7 +43,7 @@ public class BinarySearchTree {
                 }
 
                 tempNode = tempNode.left;
-            } 
+            }
             // Right case.
             else {
                 if (tempNode.right == null) {
@@ -72,6 +78,77 @@ public class BinarySearchTree {
         }
 
         return false;
+    }
+
+    // Searches for a value in the tree using Breadth First Search (Search left to right, and then down row to row).
+    public ArrayList<Integer> BFS() {
+        Node currNode = rootNode;
+        Queue<Node> queue = new LinkedList<>();
+        ArrayList<Integer> results = new ArrayList<>();
+
+        queue.add(currNode);
+
+        while (queue.size() > 0) {
+            currNode = queue.remove();
+
+            results.add(currNode.data);
+            if (currNode.left != null) {
+                queue.add(currNode.left);
+            }
+
+            if (currNode.right != null) {
+                queue.add(currNode.right);
+            }
+        }
+
+        return results;
+    }
+
+    // Searches for a value in the tree using PostOrder Depth First Search.
+    public ArrayList<Integer> DFSPostOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currNode) {
+                if (currNode.left != null) {
+                    new Traverse(currNode.left);
+                }
+
+                if (currNode.right != null) {
+                    new Traverse(currNode.right);
+                }
+
+                results.add(currNode.data);
+            }
+        }
+
+        new Traverse(rootNode);
+
+        return results;
+    }
+
+    // Searches for a value in the tree using InOrder Depth First Search.
+    public ArrayList<Integer> DFSInOrder() {
+        ArrayList<Integer> results = new ArrayList<>();
+
+        class Traverse {
+            Traverse(Node currNode) {
+                if (currNode.left != null) {
+                    new Traverse(currNode.left);
+                }
+
+                results.add(currNode.data);
+
+                if (currNode.right != null) {
+                    new Traverse(currNode.right);
+                }
+
+            }
+        }
+
+        new Traverse(rootNode);
+
+        return results;
     }
 
 

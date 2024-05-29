@@ -49,7 +49,7 @@ public class Heap {
                 maxIndex = rightIndex;
             }
 
-            if (maxIndex != index){
+            if (maxIndex != index) {
                 swapValues(index, maxIndex);
                 index = maxIndex;
             } else {
@@ -68,7 +68,7 @@ public class Heap {
         int tempIndex = heap.size() - 1;
 
         // Stop while loop until it reaches the top.
-        while(tempIndex > 0 && heap.get(tempIndex) > heap.get(getParent(tempIndex))) {
+        while (tempIndex > 0 && heap.get(tempIndex) > heap.get(getParent(tempIndex))) {
 
             // Swap tempIndex value with parent.
             swapValues(tempIndex, getParent(tempIndex));

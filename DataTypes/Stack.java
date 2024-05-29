@@ -13,14 +13,14 @@ public class Stack {
     private Node topNode;
     private int size = 0;
 
-    public Stack (int inData) {
+    public Stack(int inData) {
         Node newNode = new Node(inData);
         topNode = newNode;
 
         size++;
     }
 
-    public void print(){
+    public void print() {
         String output = "";
 
         Node tempNode = topNode;
@@ -33,7 +33,7 @@ public class Stack {
     }
 
     // Adds a new item to the end of the stack.
-    public void push(int inData){
+    public void push(int inData) {
         Node newNode = new Node(inData);
 
         if (size == 0) {
@@ -47,10 +47,10 @@ public class Stack {
     }
 
     // Removes the last item of the stack, then returns the value that was deleted.
-    public Node pop(){
-        if (size == 0){
+    public Node pop() {
+        if (size == 0) {
             return null;
-        } 
+        }
 
         Node tempNode = topNode;
         topNode = topNode.nextNode;

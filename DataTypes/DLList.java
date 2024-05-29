@@ -5,13 +5,13 @@ public class DLList<T> {
         public Node nextNode;
         public Node prevNode;
 
-        public Node(T inData){
+        public Node(T inData) {
             data = inData;
             nextNode = null;
             prevNode = null;
         }
 
-        public Node(T inData, Node inNextNode, Node inPreviousNode){
+        public Node(T inData, Node inNextNode, Node inPreviousNode) {
             data = inData;
             nextNode = inNextNode;
             prevNode = inPreviousNode;
@@ -44,7 +44,7 @@ public class DLList<T> {
         String output = "";
         Node tempNode = firstNode;
 
-        for (int x=0; x < size; ++x) {
+        for (int x = 0; x < size; ++x) {
             output += tempNode.data + " ";
             tempNode = tempNode.nextNode;
         }
@@ -63,7 +63,7 @@ public class DLList<T> {
             newNode.prevNode = lastNode;
             lastNode = newNode;
         }
-        
+
         size++;
     }
 
@@ -156,13 +156,13 @@ public class DLList<T> {
         // Performance increase here using divide and conquer.
         // If index is in the first half of size, iterate forward.
         // If index is in back half of the list, iterate backwards.
-        if (index < size/2) {
-            for (int x=0; x < index; ++x) {
+        if (index < size / 2) {
+            for (int x = 0; x < index; ++x) {
                 tempNode = tempNode.nextNode;
             }
         } else {
             tempNode = lastNode;
-            for (int x=0; x < index; ++x) {
+            for (int x = 0; x < index; ++x) {
                 tempNode = tempNode.prevNode;
             }
         }

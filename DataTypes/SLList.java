@@ -4,7 +4,7 @@ public class SLList<T> {
         public T data;
         public Node nextNode;
 
-        public Node(T inData){
+        public Node(T inData) {
             data = inData;
         }
     }
@@ -32,7 +32,7 @@ public class SLList<T> {
         String output = "";
         Node tempNode = firstNode;
 
-        for (int x=0; x < size; ++x) {
+        for (int x = 0; x < size; ++x) {
             output += tempNode.data + " ";
             tempNode = tempNode.nextNode;
         }
@@ -78,7 +78,7 @@ public class SLList<T> {
         }
 
         Node tempNode = firstNode;
-        for (int x=0; x < index; ++x) {
+        for (int x = 0; x < index; ++x) {
             tempNode = tempNode.nextNode;
         }
 
@@ -109,7 +109,7 @@ public class SLList<T> {
             prepend(inData);
 
             return true;
-        } 
+        }
 
         if (index == size) {
             append(inData);
@@ -132,7 +132,7 @@ public class SLList<T> {
     public int size() {
         return size;
     }
- 
+
     // Removes the last node in the list. Returns the last node that was removed.
     public Node pop() {
         if (size == 0) {
@@ -151,7 +151,7 @@ public class SLList<T> {
         lastNode.nextNode = null;
 
         size--;
-   
+
         // If the size gets decremented to 0, make sure the first and last nodes are null.
         if (size == 0) {
             firstNode = null;
@@ -170,7 +170,7 @@ public class SLList<T> {
         Node tempNode = firstNode;
         firstNode = firstNode.nextNode;
         tempNode.nextNode = null;
-        
+
         size--;
 
         // If the
@@ -198,7 +198,7 @@ public class SLList<T> {
         lastNode = prevNode;
         lastNode.nextNode = null;
 
-        size --;
+        size--;
 
         // Account for case where size == 0.
         if (size == 0) {
@@ -243,7 +243,7 @@ public class SLList<T> {
 
         Node nextNode = tempNode.nextNode;
         Node prevNode = null;
-        for (int x=0; x < size; ++x) {
+        for (int x = 0; x < size; ++x) {
             nextNode = tempNode.nextNode;
             tempNode.nextNode = prevNode;
             prevNode = tempNode;
